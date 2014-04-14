@@ -10,7 +10,7 @@ Install `rcm`
 
 ```
 brew tap thoughtbot/formulae
-brew install rcp
+brew install rcm
 ```
 
 Make sure everything looks right 
