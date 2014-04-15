@@ -1,0 +1,42 @@
+[push]
+    default = current
+[pull]
+    rebase = true
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  s = status -sb
+  stat = status
+  pu = push
+  pl = pull
+  pr = pull-request
+  gap = add -p
+  pub = "!f() { git push -u ${1:-origin} `git symbolic-ref HEAD`; }; f"
+  l = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
+  ll = log --stat --abbrev-commit
+  d = diff --color-words
+  su = "!f() { git submodule sync; git submodule update --init; }; f"
+  graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+[credential]
+    helper = osxkeychain
+[rerere]
+  enabled = 1
+[color]
+  # Use colors in Git commands that are capable of colored output when outputting to the terminal
+  ui = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[include]
+  path = .gitconfig.local
