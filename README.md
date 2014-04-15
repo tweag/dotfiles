@@ -23,19 +23,14 @@ Checkout the repo
 git clone git@github.com:promptworks/dotfiles.git /usr/local/share/promptworks-dotfiles
 ```
 
-Setup your `rcm` configuration file 
+Tell rcup about the promptworks dotfiles the first time:
 ```
-vim ~/.rcrc
-```
-
-Make sure your .rcrc has the following line:
-```
-DOTFILES_DIRS="$HOME/.dotfiles /usr/local/share/promptworks-dotfiles"
+rcup -v -d ~/.dotfiles -d /usr/local/share/promptworks-dotfiles
 ```
 
-Adds the file to your .dotfiles as a host specific file. Feel free to skip the `-o` if you only use your dotfiles on a single machine
+Add an existing dotfile in your home directory to your .dotfiles as a host specific file. Feel free to skip the `-o` if you only use your dotfiles on a single machine
 ```
-mkrc -o ~/.rcrc 
+mkrc -o ~/.gitconfig.local
 ```
 
 Make sure it's going to pickup the promptworks files
@@ -47,6 +42,8 @@ Finally install all the things
 ```
 rcup -v
 ```
+
+*Note:* Your personal dotfiles will take precedence over the promptworks dotfiles. To have it both ways (.gitconfig, for example), append .local to the end, as described in thoughtbot/dotfiles
 
 ### Notes
 * `man rcm` for more info about setting up rcm with an existing repo
