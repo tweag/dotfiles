@@ -3,8 +3,15 @@
 [pull]
     rebase = true
 [alias]
+  aa = add --all
+  ap = add --patch
+  ca = commit --amend
+  ci = commit -v
   co = checkout
-  ci = commit
+  create-branch = !sh -c 'git push origin HEAD:refs/heads/$1 && git fetch origin && git branch --track $1 origin/$1 && cd . && git checkout $1' -
+  delete-branch = !sh -c 'git push origin :refs/heads/$1 && git branch -D $1' -
+  merge-branch = !git checkout master && git merge @{-1}
+  pr = !hub pull-request
   st = status
   s = status -sb
   stat = status
@@ -18,6 +25,7 @@
   d = diff --color-words
   su = "!f() { git submodule sync; git submodule update --init; }; f"
   graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+  up = !git fetch origin && git rebase origin/master
 [credential]
     helper = osxkeychain
 [rerere]
@@ -38,5 +46,10 @@
   added = yellow
   changed = green
   untracked = cyan
+[core]
+  excludesfile = ~/.gitignore
+  autocrlf = input
 [include]
   path = .gitconfig.local
+[fetch]
+  prune = true
