@@ -15,7 +15,7 @@ brew install rcm
 
 Make sure everything looks right 
 ```
-mkdir -p ~/dotfiles
+mkdir -p ~/.dotfiles
 lsrc -v
 ```
 
@@ -26,10 +26,10 @@ git clone git@github.com:promptworks/dotfiles.git /usr/local/share/promptworks-d
 
 Tell rcup about the promptworks dotfiles the first time:
 ```
-rcup -v -d ~/dotfiles -d /usr/local/share/promptworks-dotfiles
+rcup -v -d ~/.dotfiles -d /usr/local/share/promptworks-dotfiles
 ```
 
-Add an existing dotfile in your home directory to your dotfiles as a host-specific file. Feel free to skip the `-o` if you only use your dotfiles on a single machine
+Add an existing dotfile in your home directory to your .dotfiles as a host specific file. Feel free to skip the `-o` if you only use your dotfiles on a single machine
 ```
 mkrc -o ~/.gitconfig.local
 ```
