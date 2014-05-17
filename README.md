@@ -51,3 +51,4 @@ rcup -v
 * `man rcrc` for how to use your `.rcrc` file to it's fullest
 * `man rcup` to understand how all this works
 * Checkout [mattmcmanus's dotfiles](https://github.com/mattmcmanus/dotfiles) for a  repo using rcm tags
+* To uninstall all rcm-managed dotfiles, run `rcdn` with the `-d` arguments you gave to rcup
