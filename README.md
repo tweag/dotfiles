@@ -13,7 +13,7 @@ brew tap thoughtbot/formulae
 brew install rcm
 ```
 
-Make sure everything looks right 
+Make sure everything looks right
 ```
 mkdir -p ~/.dotfiles
 lsrc -v
@@ -24,9 +24,10 @@ Checkout the repo
 git clone git@github.com:promptworks/dotfiles.git /usr/local/share/promptworks-dotfiles
 ```
 
-Tell rcup about the promptworks dotfiles the first time:
+Tell rcup about the promptworks dotfiles the first time and run rcup:
 ```
-rcup -v -d ~/.dotfiles -d /usr/local/share/promptworks-dotfiles
+rcup -K -d /usr/local/share/promptworks-dotfiles rcrc
+rcup
 ```
 
 Add an existing dotfile in your home directory to your .dotfiles as a host specific file. Feel free to skip the `-o` if you only use your dotfiles on a single machine
