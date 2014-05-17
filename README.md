@@ -34,7 +34,7 @@ Add an existing dotfile in your home directory to your .dotfiles as a host speci
 mkrc -o ~/.gitconfig.local
 ```
 
-Make sure it's going to pickup the promptworks files
+Make sure it's going to pick up the promptworks files
 ```
 lsrc -v
 ```
