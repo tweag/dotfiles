@@ -1,3 +1,5 @@
+[include]
+  path = .gitconfig.local
 [push]
   default = current
 [pull]
@@ -62,9 +64,6 @@
   path = .gitconfig.local
 [fetch]
   prune = true
-[user]
-  email = gsterndale@gmail.com
-  name = Greg Sterndale
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
   path =
