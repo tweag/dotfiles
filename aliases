@@ -24,11 +24,15 @@ alias t="ruby -I test"
 alias cuc="bundle exec cucumber"
 
 # Rails
+alias be="bundle exec"
+alias rake="noglob rake"
 alias migrate="rake db:migrate db:rollback && rake db:migrate db:test:prepare"
 alias m="migrate"
 alias rk="rake"
 alias s="rspec"
 alias z="zeus"
+
+alias reload!='. ~/.zshrc'
 
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
