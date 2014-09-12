@@ -1,5 +1,3 @@
-[include]
-  path = .gitconfig.local
 [push]
   default = current
 [pull]
@@ -60,8 +58,6 @@
   excludesfile = ~/.gitignore
   autocrlf     = input
   editor       = vim
-[include]
-  path = .gitconfig.local
 [fetch]
   prune = true
 [difftool "sourcetree"]
@@ -80,3 +76,7 @@
   prompt = false
 [help]
   autocorrect = 1
+
+# NEEDS TO BE LAST LINE IN THIS FILE
+[include]
+  path = .gitconfig.local
