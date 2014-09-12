@@ -7,7 +7,11 @@
   ap = add --patch
   ca = commit --amend
   ci = commit -v
+  cia   = commit -v -a
+  ciam  = commit -v -a -m
+  cim   = commit -v -m
   co = checkout
+  cob = checkout -b
   br = branch
   create-branch = !sh -c 'git push origin HEAD:refs/heads/$1 && git fetch origin && git branch --track $1 origin/$1 && cd . && git checkout $1' -
   delete-branch = !sh -c 'git push origin :refs/heads/$1 && git branch -D $1' -
@@ -33,7 +37,10 @@
   enabled = 1
 [color]
   # Use colors in Git commands that are capable of colored output when outputting to the terminal
-  ui = auto
+  ui     = auto
+  diff   = auto
+  status = auto
+  branch = auto
 [color "branch"]
   current = yellow reverse
   local = yellow
