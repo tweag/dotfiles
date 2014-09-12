@@ -9,3 +9,5 @@ tags
 tmp/**/*
 !tmp/cache/.keep
 zeus.json
+*.rbc
+*~
