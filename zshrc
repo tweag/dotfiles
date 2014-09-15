@@ -109,3 +109,6 @@ function title() {
     ;;
   esac
 }
+
+# Put homebrew bin before /usr/bin
+export PATH="/usr/local/bin:$PATH"
