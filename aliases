@@ -15,6 +15,7 @@ alias v="$VISUAL"
 
 # git
 alias gci="git pull --rebase && rake && git push"
+alias ggrep="git grep --break --heading -n"
 
 # Bundler
 alias b="bundle"
