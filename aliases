@@ -13,6 +13,9 @@ alias -g ONE="| awk '{ print \$1}'"
 alias e="$EDITOR"
 alias v="$VISUAL"
 
+# rcm
+alias rcupup="cd /usr/local/share/promptworks-dotfiles && git pull && rcup -v"
+
 # git
 alias gci="git pull --rebase && rake && git push"
 alias ggrep="git grep --break --heading -n"

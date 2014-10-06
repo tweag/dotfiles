@@ -45,6 +45,21 @@ Finally install all the things
 rcup -v
 ```
 
+## Updating your PromptWorks dotfiles
+
+```
+cd /usr/local/share/promptworks-dotfiles
+git pull
+rcup -v
+```
+
+*OR*
+
+```
+rcupup
+```
+
+
 *Note:* Your personal dotfiles will take precedence over the promptworks dotfiles. To have it both ways (.gitconfig, for example), append .local to the end, as described in thoughtbot/dotfiles
 
 ### Notes
