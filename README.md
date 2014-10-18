@@ -21,12 +21,12 @@ lsrc -v
 
 Checkout the repo
 ```
-git clone git@github.com:promptworks/dotfiles.git /usr/local/share/promptworks-dotfiles
+git clone git@github.com:promptworks/dotfiles.git ~/.promptworks-dotfiles
 ```
 
 Tell rcup about the promptworks dotfiles the first time and run rcup:
 ```
-rcup -K -d /usr/local/share/promptworks-dotfiles rcrc
+rcup -K -d ~/.promptworks-dotfiles rcrc
 rcup
 ```
 
@@ -48,7 +48,7 @@ rcup -v
 ## Updating your PromptWorks dotfiles
 
 ```
-cd /usr/local/share/promptworks-dotfiles
+cd ~/.promptworks-dotfiles
 git pull
 rcup -v
 ```
