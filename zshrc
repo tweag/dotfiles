@@ -66,7 +66,7 @@ if which rbenv &>/dev/null ; then
   eval "$(rbenv init - --no-rehash)"
 fi
 
-# load thoughtbot/dotfiles scripts
+# load scripts in dotfiles
 export PATH="$HOME/.bin:$PATH"
 
 # mkdir .git/safe in the root of repositories you trust
