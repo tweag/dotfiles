@@ -14,7 +14,7 @@ alias e="$EDITOR"
 alias v="$VISUAL"
 
 # rcm
-alias rcupup="cd /usr/local/share/promptworks-dotfiles && git pull && rcup -v"
+alias rcupup="cd ~/.promptworks-dotfiles && git pull && rcup -v"
 
 # git
 alias gci="git pull --rebase && rake && git push"
