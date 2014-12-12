@@ -67,6 +67,9 @@ export PATH="$HOME/.bin:$PATH"
 # mkdir .git/safe in the root of repositories you trust
 export PATH=".git/safe/../../bin:$PATH"
 
+# Put homebrew bin before /usr/bin
+export PATH="/usr/local/bin:$PATH"
+
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
@@ -104,6 +107,3 @@ function title() {
     ;;
   esac
 }
-
-# Put homebrew bin before /usr/bin
-export PATH="/usr/local/bin:$PATH"
