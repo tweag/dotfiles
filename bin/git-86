@@ -1,0 +1,90 @@
+#!/bin/sh
+#
+# Delete all branches merged into the current branch
+# Optionally specify a remote name on which to delete merged branches
+# Optionally specify a protected branch name to save from deletion, "master" will be used by default.
+#
+# Gleaned from http://stackoverflow.com/questions/6127328/how-can-i-delete-all-git-branches-which-have-been-merged
+#
+# git 86
+# git 86 -p dev
+# git 86 -r heroku
+# git 86 -r heroku -p dev
+# git 86 -t
+
+usage() { echo "Usage: $0 [-r <remote name>] [-p <protected branch name>] [-t]" 1>&2; exit 1; }
+
+protected=master
+pretend=
+
+while getopts ":r:p:t" o; do
+    case "${o}" in
+        r)
+            remote=${OPTARG}
+            ;;
+        p)
+            protected=${OPTARG}
+            ;;
+        t)
+            pretend=1
+            ;;
+        *)
+            usage
+            ;;
+    esac
+done
+
+shift $((OPTIND-1))
+
+find_remote_branches () {
+  git branch --remote --merged | \
+    grep -E "^\s+$remote" | \
+    grep -Ev "$remote/$protected$" | \
+    grep -Ev "^\**\s*$protected$" | \
+    sed "s/$1\///"
+}
+
+list_remote_branches () {
+  xargs -n 1 git branch --list --remote
+}
+
+delete_remote_branches () {
+  xargs -n 1 git push --delete $1
+}
+
+find_local_branches () {
+  git branch --merged | \
+    grep -Ev "^\**\s*$protected$"
+}
+
+list_local_branches () {
+  xargs -n 1 git branch --list
+}
+
+delete_local_branches () {
+  xargs git branch -d
+}
+
+confirm () {
+    read -r -p "${1:-Delete branches? [y/N]} " response
+    case $response in
+        [yY][eE][sS]|[yY])
+            true
+            ;;
+        *)
+            false
+            ;;
+    esac
+}
+
+if [ $remote ]; then
+  find_remote_branches | list_remote_branches
+  [ $pretend ] && exit 0
+  confirm || exit 1
+  find_remote_branches | delete_remote_branches
+else
+  find_local_branches | list_local_branches
+  [ $pretend ] && exit 0
+  confirm || exit 1
+  find_local_branches | delete_local_branches
+fi
