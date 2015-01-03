@@ -76,6 +76,8 @@
   prompt = false
 [help]
   autocorrect = 1
+[grep]
+  linenumber = true
 
 # NEEDS TO BE LAST LINE IN THIS FILE
 [include]
