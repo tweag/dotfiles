@@ -70,6 +70,10 @@ export PATH=".git/safe/../../bin:$PATH"
 # Put homebrew bin before /usr/bin
 export PATH="/usr/local/bin:$PATH"
 
+# Prevent python from making .pyc files, which can become stale causing
+# hard-to-find bugs
+export PYTHONDONTWRITEBYTECODE=1
+
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
