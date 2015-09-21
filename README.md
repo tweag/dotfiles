@@ -21,7 +21,7 @@ lsrc -v
 
 Checkout the repo
 ```
-git clone git@github.com:promptworks/dotfiles.git ~/.promptworks-dotfiles
+git clone https://github.com/promptworks/dotfiles.git ~/.promptworks-dotfiles
 ```
 
 Tell rcup about the promptworks dotfiles the first time and run rcup:
