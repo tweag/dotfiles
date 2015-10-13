@@ -6,6 +6,7 @@
   aa = add --all
   ap = add --patch
   ca = commit --amend
+  amend = commit -a --amend --no-edit
   ci = commit -v
   cia   = commit -v -a
   ciam  = commit -v -a -m
