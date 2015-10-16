@@ -19,6 +19,7 @@ alias rcupup="cd ~/.promptworks-dotfiles && git pull && rcup -v"
 # git
 alias gci="git pull --rebase && rake && git push"
 alias ggrep="git grep --break --heading -n"
+alias gtidy="git remote prune origin && git branch --merged master | egrep -v 'master|develop$' | xargs git branch -d"
 
 # Bundler
 alias b="bundle"
