@@ -30,9 +30,9 @@ rcup -K -d ~/.promptworks-dotfiles rcrc
 rcup
 ```
 
-Add an existing dotfile in your home directory to your .dotfiles as a host specific file. Feel free to skip the `-o` if you only use your dotfiles on a single machine
+Add an existing dotfile in your home directory to your .dotfiles as a host specific file. Feel free to add the `-o` option if you use your dotfiles on more than one machine
 ```
-mkrc -o ~/.gitconfig.local
+mkrc ~/.gitconfig.local
 ```
 
 Make sure it's going to pick up the promptworks files
