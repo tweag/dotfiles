@@ -114,3 +114,6 @@ function title() {
 
 # Don't do weird underscore autocompletion for stuff that doesn't exist
 zstyle ':completion:*:functions' ignored-patterns '_*'
+
+# Let's make history! (in the Python REPL)
+export PYTHONSTARTUP=~/.pystartup
