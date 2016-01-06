@@ -111,3 +111,6 @@ function title() {
     ;;
   esac
 }
+
+# Don't do weird underscore autocompletion for stuff that doesn't exist
+zstyle ':completion:*:functions' ignored-patterns '_*'
