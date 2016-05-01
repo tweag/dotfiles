@@ -22,6 +22,7 @@
   s = status -sb
   stat = status
   pu = push
+  pf = push --force-with-lease
   pl = pull
   pr = pull-request
   gap = add -p
