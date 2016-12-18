@@ -64,22 +64,12 @@ fi
 # load scripts in dotfiles
 export PATH="$HOME/.bin:$PATH"
 
-# mkdir .git/safe in the root of repositories you trust
-export PATH=".git/safe/../../bin:$PATH"
-
 # Put homebrew bin before /usr/bin
 export PATH="/usr/local/bin:$PATH"
 
 # Prevent python from making .pyc files, which can become stale causing
 # hard-to-find bugs
 export PYTHONDONTWRITEBYTECODE=1
-
-# aliases
-[[ -f ~/.aliases ]] && source ~/.aliases
-
-# Local config
-[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
-
 
 ### Completion
 # matches case insensitive for lowercase
@@ -117,3 +107,20 @@ zstyle ':completion:*:functions' ignored-patterns '_*'
 
 # Let's make history! (in the Python REPL)
 export PYTHONSTARTUP=~/.pystartup
+
+
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# aliases
+[[ -f ~/.aliases ]] && source ~/.aliases
+
+# Local config
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+# do `mkdir .git/safe` in the root of repositories you trust in order add their
+# ./bin directory to your path
+export PATH=".git/safe/../../bin:$PATH"
