@@ -10,3 +10,5 @@ tmp/**/*
 zeus.json
 *.rbc
 *~
+__pycache__/
+*.py[cod]
