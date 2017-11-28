@@ -33,6 +33,7 @@
   su = "!f() { git submodule sync; git submodule update --init; }; f"
   graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
   up = !git fetch origin && git rebase origin/master
+  clean-local = git branch --merged | egrep -v "(^\*|master|staging)" | xargs git branch -d
 [credential]
   helper = osxkeychain
 [rerere]
