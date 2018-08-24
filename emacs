@@ -93,7 +93,7 @@
 (require 'highlight-chars)
 (add-hook 'font-lock-mode-hook 'hc-highlight-tabs)
 
-;highlight trailing whitespace
+;; highlight trailing whitespace
 (custom-set-variables '(show-trailing-whitespace t))
 
 ;; remove auto-newline because many projects don't have it
