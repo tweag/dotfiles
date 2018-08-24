@@ -89,4 +89,14 @@
 ;;; Load .emacs.local without protesting if it's not present.
 (load "~/.emacs.local" 1)
 
+;; remove auto-newline because many projects don't have it
+(setq require-final-newline nil)
+(setq mode-require-final-newline nil)
+
+;; nuke auto indent because it's more annoying than helpful
+(electric-indent-mode -1)
+
+;; get the *~ files out of sight
+(setq backup-directory-alist '(("" . "~/.emacs.d/emacs-backup")))
+
 ;; BELOW HERE BE DRAGONS
