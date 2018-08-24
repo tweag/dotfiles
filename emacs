@@ -89,6 +89,13 @@
 ;;; Load .emacs.local without protesting if it's not present.
 (load "~/.emacs.local" 1)
 
+;; show all tabs
+(require 'highlight-chars)
+(add-hook 'font-lock-mode-hook 'hc-highlight-tabs)
+
+;highlight trailing whitespace
+(custom-set-variables '(show-trailing-whitespace t))
+
 ;; remove auto-newline because many projects don't have it
 (setq require-final-newline nil)
 (setq mode-require-final-newline nil)
