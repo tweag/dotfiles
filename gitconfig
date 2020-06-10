@@ -62,9 +62,6 @@
   editor       = vim
 [fetch]
   prune = true
-[difftool "sourcetree"]
-  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-  path =
 [apply]
   whitespace = nowarn
 [apply]
